@@ -45,3 +45,6 @@ gem 'httparty'
 
 # For background jobs
 gem 'sidekiq'
+
+# Test Suit
+gem 'rspec-rails'

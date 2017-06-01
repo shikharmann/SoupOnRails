@@ -5,7 +5,7 @@ class EmailJob
   sidekiq_options queue: :default
 
   def perform(id, mail_type)
-    user = User.joins(:email).find(id)
+    user = User.find(id)
     Mailgun::MailgunMessageService.new(user).send_email(mail_type)
   end
 

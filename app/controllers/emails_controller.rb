@@ -7,9 +7,9 @@ class EmailsController < ApplicationController
   def update
     if secured_webhook?
       email = Email.find_by_address(params[:recipient])
-      render status: email.update_email(email_params, log_data) ? 200 : 406
+      render status: email.update_email(email_params, log_data) ? 200 : 406, json: {status: 200}
     else
-      render status: 406
+      render status: 406, json: {status: 406}
     end
   end
 
@@ -26,7 +26,7 @@ class EmailsController < ApplicationController
   end
 
   def email_params
-    params.merge(email: {resend: resend?}).require(:email).permits(:resend)
+    params.merge(email: {resend: resend?}).require(:email).permit(:resend)
   end
 
   def log_data

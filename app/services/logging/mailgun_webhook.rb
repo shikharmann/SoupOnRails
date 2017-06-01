@@ -2,7 +2,7 @@ module Logging
   class MailgunWebhook
 
     def initialize
-      if File.exits?(log_path)
+      if File.exists?(log_path)
         @log_file = File.open(log_path, 'a')
       else
         @log_file = File.new(log_path, 'w')
@@ -20,7 +20,7 @@ module Logging
 
     private
 
-    def self.log_path
+    def log_path
       "#{Rails.root}/tmp/logs.csv"
     end
 

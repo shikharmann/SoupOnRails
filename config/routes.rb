@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   # Root routes
   root to: 'emails#activate'
 
+  post '/emails/update', to: 'emails#update'
+
 
 end
