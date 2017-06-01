@@ -29,13 +29,17 @@ a. Models
             4. resend
         - methods
             1. update_email
+
+
 b. Controllers
     * EmailsController
         - activate
         - update
+
 c. Jobs
     * EmailJob
         - perform
+        
 d. Services
     * Mailgun
         - MailgunEmailData
