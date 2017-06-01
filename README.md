@@ -86,11 +86,11 @@ Key Decisions
 
 2. Storing a boolean variable in emails table resend which will be true if
 
-    *. user has not clicked the email and
-    *. email has not bounced and
-    *. email has not unsubscribed and
-    *. email has not complained and
-    *. resend mail has not been sent,
+    * user has not clicked the email and
+    * email has not bounced and
+    * email has not unsubscribed and
+    * email has not complained and
+    * resend mail has not been sent,
 
     this variable is updated through webhooks. In case webhook fails then as fallback check if email is on supression
     list before sending the reminder email. This approach provides a complete solution wherein we are protected againt
