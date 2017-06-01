@@ -18,41 +18,63 @@ User Defined Gems
 Architecture
 
 a. Models
+
     * User
+
         - atttibutes
+
             1. name
+
     * Email
+
         - attributes
+
             1. address
             2. user_id
             3. verified
             4. resend
+
         - methods
+
             1. update_email
 
 
 b. Controllers
+
     * EmailsController
+
         - activate
         - update
 
 c. Jobs
+
     * EmailJob
+
         - perform
-        
+
 d. Services
+
     * Mailgun
+
         - MailgunEmailData
+
             1. get_message
             2. get_subject
+
         - MailgunMessageService
+
             1. initialize
             2. send_email
+
         - MailgunSuppressionService
+
             1. initialize
             2. suppressed?
+
     * Logging
+
         - MailgunWebhook
+        
             1. initialize
             2. log
             3. close
