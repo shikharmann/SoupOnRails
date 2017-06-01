@@ -1,0 +1,31 @@
+development:
+    adapter: postgresql
+    database: SoupOnRails_development
+    host: localhost
+    pool: 5
+    timeout: 5000
+    schema_search_path: '"$user", public, postgis'
+    username: <%= ENV['DATABASE_USER_NAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+
+test:
+    adapter: postgresql
+    database: SoupOnRails_test
+    pool: <%= ENV['DB_POOL'] || 10 %>
+    timeout: 5000
+    schema_search_path: '"$user", public, postgis'
+    username: <%= ENV['DATABASE_USER_NAME'] %>
+    password:  <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_ENDPOINT'] %>
+    port: 5432
+
+production:
+    adapter: postgresql
+    database: SoupOnRails_production
+    pool: <%= ENV['DB_POOL'] || 10 %>
+    timeout: 5000
+    schema_search_path: '"$user", public, postgis'
+    username: <%= ENV['DATABASE_USER_NAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    host: <%= ENV['DATABASE_ENDPOINT'] %>
+    port: 5432
