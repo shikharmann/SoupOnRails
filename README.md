@@ -1,4 +1,4 @@
-# Installation
+# Soup on Rails
 
 Prerequisites
 
