@@ -17,7 +17,7 @@ ActiveAdmin.register User do
       link_to user.name, admin_user_path(user.id)
     end
     column :email do |user|
-      link_to user.email.addws, admin_email_path(user.email.id)
+      link_to user.email.address, admin_email_path(user.email.id)
     end
     column :activated do |user|
       user.email.activated
